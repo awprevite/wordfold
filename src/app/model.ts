@@ -35,7 +35,7 @@ export class Board {
                 this.letters[r][c] = ''
             }
         }
-        this.selectedSquare = undefined
+        this.selectedSquare = new Coordinate(0, 0);
     }
 }
 
@@ -49,7 +49,7 @@ export class Model {
     currentConfig: number
     found : string[]
 
-    /** which is zero-based. */
+    /* which is zero-based */
     constructor(which:number) {
         this.chosen = which
         let puzzle = this.configs[this.chosen]

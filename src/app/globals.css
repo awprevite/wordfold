@@ -27,9 +27,7 @@ body {
 }
 
 .board {
-  position: absolute;
-  left: 10px;
-  top: 10px;
+  padding: 1px;
 }
 
 .square {
@@ -40,14 +38,12 @@ body {
   background-color: #EEEEEE;
   color: #333333;
   padding: 2px 6px 2px 6px;
-  border-top: 1px solid #CCCCCC;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
+  border: 1px solid white;
+  box-sizing: border-box;
 }
 
 .selected {
-  background-color: #91964a;
+  background-color: gold;
   color: #eee;
 }
 
@@ -62,122 +58,55 @@ body {
   background-color: #EEEEEE;
   color: #333333;
   padding: 2px 6px 2px 6px;
-  border-top: 1px solid #CCCCCC;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
+  border: 1px solid #333333;
+  box-sizing: border-box;
 }
 
 .button-container {
   display: flex;
 }
 
-.score {
-  position: absolute;
-  left: 550px;
-  top: 10px;
+.horizontal-container {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  gap: 10px;
+  margin: 5px;
 }
 
-.numMoves {
-  position: absolute;
-  left: 550px;
-  top: 40px;
+.vertical-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  margin: 5px;
 }
 
-.arrowUp {
-  position: absolute;
-  left: 620px;
-  top: 80px;
-  border-top: 1px solid #CCCCCC;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
-  width: 60px;
-  height: 30px
+.menu-button {
+  background-color: gold;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
 }
 
-.arrowDown {
-  position: absolute;
-  left: 620px;
-  top: 120px;
-  border-top: 1px solid #CCCCCC;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
-  width: 60px;
-  height: 30px
+.menu-button:hover {
+  background-color: darkgoldenrod;
 }
 
-.arrowLeft {
-  position: absolute;
-  left: 550px;
-  top: 100px;
-  border-top: 1px solid #CCCCCC;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
-  width: 60px;
-  height: 30px
+.menu-button option {
+  background-color: gold;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  appearance: none;
 }
 
-.arrowRight {
-  position: absolute;
-  left: 690px;
-  top: 100px;
-  border-top: 1px solid #CCCCCC;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
-  width: 60px;
-  height: 30px
-}
-
-.reset {
-  position: absolute;
-  left: 550px;
-  top: 200px;
-  border-top: 1px solid #CCCCCC;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
-}
-
-.config1{
-  position: absolute;
-  left: 550px;
-  top: 250px;
-  border-top: 1px solid #CCCCCC;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
-}
-
-.config2{
-  position: absolute;
-  left: 650px;
-  top: 250px;
-  border-top: 1px solid #CCCCCC;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
-}
-
-.config3{
-  position: absolute;
-  left: 750px;
-  top: 250px;
-  border-top: 1px solid #CCCCCC;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
-}
-
-.check{
-  position: absolute;
-  left: 550px;
-  top: 300px;
-  border-top: 1px solid #CCCCCC;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
+button:focus, 
+select:focus {
+  outline: none;
+  box-shadow: none;
 }
