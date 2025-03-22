@@ -84,7 +84,19 @@ body {
   margin: 5px;
 }
 
+.instruction-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  margin: 5px;
+  width: 30%;
+}
+
 .menu-button {
+  font: bold 18px Arial;
   background-color: gold;
   color: white;
   padding: 10px;
@@ -109,4 +121,35 @@ button:focus,
 select:focus {
   outline: none;
   box-shadow: none;
+}
+
+.notification {
+  font: bold 24px Arial;
+  position: fixed;
+  top: 300px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333333;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  z-index: 1000;
+  animation: fade-in-out 3s ease-in-out;
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  10%, 90% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
 }

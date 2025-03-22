@@ -11,6 +11,7 @@ export default function Home() {
   const [redraw, forceRedraw] = useState(0);
   const [history, setHistory] = useState([new Model(0)]);
   const [instructionsOpen, setInstructionsOpen] = useState(false);
+  const [notification, setNotification] = useState<string | null>(null);
   const squareRef = useRef<HTMLButtonElement>(null);
 
   // Allows for arrows to be used upon loading
@@ -20,6 +21,14 @@ export default function Home() {
     }
   }, []);
 
+  function showNotification(message: string) {
+    setNotification(message);
+
+    setTimeout(() => {
+      setNotification(null);
+    }, 3000);
+  }
+
   // helper function that forces React app to redraw whenever this is called.
   function andRefreshDisplay() {
     forceRedraw(redraw + 1)
@@ -27,7 +36,7 @@ export default function Home() {
 
   function handleBack() {
     if (history.length <= 1) {
-      alert("No more moves to undo");
+      showNotification("No more moves to undo");
     } else {
 
       const prevState = history[history.length - 1];
@@ -101,10 +110,6 @@ export default function Home() {
   }
 
   function handleShiftArrow(direction: string) {
-    if (model.board.selectedSquare === undefined) {
-      alert("Select a square first")
-      return
-    }
     
     let r = model.board.selectedSquare!.getRow()
     let c = model.board.selectedSquare!.getCol()
@@ -136,7 +141,7 @@ export default function Home() {
 
   function handleArrow(direction: string) {
     if (model.board.selectedSquare === undefined) {
-      alert("Select a square first")
+      showNotification("Select a square first")
       return
     }
     
@@ -144,13 +149,13 @@ export default function Home() {
     let c = model.board.selectedSquare!.getCol()
 
     if (r == undefined || c == undefined) {
-      alert("Undefined, selected sqaure coordinates")
+      showNotification("Undefined, selected sqaure coordinates")
       return
     }
 
     if(direction === "up"){
       if(r - 1 < 0 || model.board.letters[r - 1][c] === undefined || model.board.letters[r - 1][c] === ""){
-        alert("Out of bounds")
+        showNotification("Out of bounds")
         return
       }
       let updated = model.board.letters[r][c] + model.board.letters[r - 1][c]
@@ -164,7 +169,7 @@ export default function Home() {
     }
     if(direction === "down"){
       if(r + 1 > 4 || model.board.letters[r + 1][c] === undefined || model.board.letters[r + 1][c] === ""){
-        alert("Out of bounds")
+        showNotification("Out of bounds")
         return
       }
       let updated = model.board.letters[r][c] + model.board.letters[r + 1][c]
@@ -178,7 +183,7 @@ export default function Home() {
     }
     if(direction === "left"){
       if(model.board.letters[r][c - 1] === undefined || model.board.letters[r][c - 1] === ""){
-        alert("Out of bounds")
+        showNotification("Out of bounds")
         return
       }
       let updated = model.board.letters[r][c] + model.board.letters[r][c - 1]
@@ -192,7 +197,7 @@ export default function Home() {
     }
     if(direction === "right"){
       if(model.board.letters[r][c + 1] === undefined || model.board.letters[r][c + 1] === ""){
-        alert("Out of bounds")
+        showNotification("Out of bounds")
         return
       }
       let updated = model.board.letters[r][c] + model.board.letters[r][c + 1]
@@ -266,10 +271,10 @@ export default function Home() {
   function handleCheckSolution(){
     //Success or Failure
     if(model.score === 25 && model.found.length === 5){
-      alert("Puzzle Completed Successfully")
+      showNotification("Puzzle Solved");
     }
     else{
-      alert("Puzzle Failed")
+      showNotification("Puzzle Incomplete");
     }
   }
 
@@ -358,6 +363,7 @@ export default function Home() {
             <button className="menu-button" onClick={() => handleArrow("down")}>DOWN</button>
           </div>
         </div>
+        {notification && <div className="notification">{notification}</div>}
       </div>
     )
   )
