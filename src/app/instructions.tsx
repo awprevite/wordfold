@@ -17,8 +17,9 @@ export function Instructions() {
         c: Check solution
       </p>
       <h2>Github</h2>
-      <p>To see source code and solutions visit this page: </p>
-      <a href="https://github.com/awprevite/wordfold" target="_blank" rel="noopener noreferrer">https://github.com/awprevite/wordfold</a>
+      <p>To see source code and solutions visit these links: </p>
+      <a href="https://github.com/awprevite/wordfold" target="_blank" rel="noopener noreferrer">https://github.com/awprevite/wordfold</a><br/>
+      <a href="https://youtu.be/AfQYQ5ri6xY" target="_blank" rel="noopener noreferrer">https://youtu.be/AfQYQ5ri6xY</a>
     </div>
   );
 }

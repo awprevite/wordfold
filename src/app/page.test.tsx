@@ -40,7 +40,7 @@ test('Move', async() => {
 )
 
 test('Reset', async() => {
-  const { getByText, getByTestId } = render(<Home />)
+  const { getByText, getByTestId, getByLabelText } = render(<Home />)
   let m:Model = new Model(0)
   const b00 = getByTestId("0,0")
   const b10 = getByTestId("1,0")
@@ -50,8 +50,7 @@ test('Reset', async() => {
   const bright = getByText("RIGHT")
   const bleft = getByText("LEFT")
   const reset = getByText("Reset")
-  const fruits = getByText("Fruits")
-  const animals = getByText("Animals")
+  const dropdown = getByTestId("categories")
 
   //check reset after move for intial config
   fireEvent.click(b10)
@@ -61,7 +60,7 @@ test('Reset', async() => {
   expect(b10.textContent).toBe("Y")
 
   //check config change
-  fireEvent.click(fruits)
+  fireEvent.change(dropdown, { target: { value: "2" } }) //Fruits
   expect(b00.textContent).toBe("H")
 
   //check reset after move for changed config
@@ -75,7 +74,7 @@ test('Reset', async() => {
   expect(b10.textContent).toBe("Y")
 
   //last congif change
-  fireEvent.click(animals)
+  fireEvent.change(dropdown, { target: { value: "1" } }) // Animals
   expect(b00.textContent).toBe("E")
 
   //right button

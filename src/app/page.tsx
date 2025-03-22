@@ -299,7 +299,7 @@ export default function Home() {
         <h1>Wordfold</h1>
         <div className="horizontal-container">
           <button className="menu-button" onClick={() => setInstructionsOpen(true)}>Instructions</button>
-          <select className="menu-button" onChange={(e) => handleChangeConfig(Number(e.target.value))}>
+          <select data-testid="categories" className="menu-button" onChange={(e) => handleChangeConfig(Number(e.target.value))}>
             <option value="" disabled>Select a category</option>
             <option value="0">Colors</option>
             <option value="1">Animals</option>
