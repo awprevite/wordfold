@@ -15,11 +15,13 @@ z: Undo
 c: Check solution
 
 # To Use
-Follow this link ...
+Play [here](https://wordfold-three.vercel.app/): https://wordfold-three.vercel.app/
 
 # Gameplay and Solutions
 Video [here](https://youtu.be/AfQYQ5ri6xY): https://youtu.be/AfQYQ5ri6xY
 
-# Features
+# Features and Notes
 
-Some Notable features include saved states allowing for undoing and custom notifications.
+Some Notable features include saved states allowing for undoing and custom notifications.  
+This implementation is only suitable for devices with a large enough screen and is best with a keyboard.  
+Some improvements to be made are to allow it to be played on mobile devices by resizing elements and allowing for common mobile interactions like dragging.
