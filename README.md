@@ -10,8 +10,8 @@ The score refers to the number of correct letters in the substrings from the sol
 ## Controls
 Use the buttons on screen and click indivudal sqaures or use the keyboard commands below.  
 Arrow keys: Move letters  
-Shift + Arrow keys: Move selected square
-z: Undo
+Shift + Arrow keys: Move selected square  
+z: Undo  
 c: Check solution
 
 # To Use
