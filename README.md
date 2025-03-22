@@ -18,7 +18,8 @@ c: Check solution
 Follow this link ...
 
 # Gameplay and Solutions
+Video [here](https://youtu.be/AfQYQ5ri6xY): https://youtu.be/AfQYQ5ri6xY
 
 # Features
 
-Some Notable features include saved states, for undoing and custom notifications.
+Some Notable features include saved states allowing for undoing and custom notifications.

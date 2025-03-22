@@ -269,7 +269,6 @@ export default function Home() {
   }
 
   function handleCheckSolution(){
-    //Success or Failure
     if(model.score === 25 && model.found.length === 5){
       showNotification("Puzzle Solved");
     }
@@ -278,8 +277,8 @@ export default function Home() {
     }
   }
 
-  // change the style for the given square based on model. Space separated string.
-  // So "square" is a regular square, while "square selected" is a selected square. Find
+  // change the style for the given square based on model. Space separated string
+  // So "square" is a regular square, while "square selected" is a selected square
   function css(row:number, column:number) {
 
     if (model.board.selectedSquare?.equals(new Coordinate(row, column))) {
