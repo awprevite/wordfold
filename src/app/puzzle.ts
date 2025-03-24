@@ -35,4 +35,16 @@ const config3 = {
              ]
 }
 
-export { config1, config2, config3 }
+const config4 = {
+  "name": "#4",
+  "words" : [ "BENGALS", "BILLS", "RAMS", "JETS", "LIONS"],
+  "theme" : "Football Teams",
+  "initial": [ ['M', 'A', 'S', 'T', 'E'],
+               ['S', 'R', 'N', 'E', 'J'],
+               ['A', 'L', 'G', 'B', 'L'],
+               ['S', 'S', 'L', 'I', 'L'],
+               ['N', 'O', 'I', 'B', 'S']
+             ]
+}
+
+export { config1, config2, config3, config4 }

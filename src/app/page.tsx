@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Model } from './model'
 import { Coordinate } from './model'
-import { config1, config2, config3 } from './puzzle'
+import { config1, config2, config3, config4 } from './puzzle'
 import { Instructions} from './instructions'
 
 export default function Home() {
@@ -159,7 +159,7 @@ export default function Home() {
         return
       }
       let updated = model.board.letters[r][c] + model.board.letters[r - 1][c]
-      if(updated.length > 6){
+      if(updated.length > 7){
         return
       }
       setHistory([...history, JSON.parse(JSON.stringify(model))]);
@@ -173,7 +173,7 @@ export default function Home() {
         return
       }
       let updated = model.board.letters[r][c] + model.board.letters[r + 1][c]
-      if(updated.length > 6){
+      if(updated.length > 7){
         return
       }
       setHistory([...history, JSON.parse(JSON.stringify(model))]);
@@ -187,7 +187,7 @@ export default function Home() {
         return
       }
       let updated = model.board.letters[r][c] + model.board.letters[r][c - 1]
-      if(updated.length > 6){
+      if(updated.length > 7){
         return
       }
       setHistory([...history, JSON.parse(JSON.stringify(model))]);
@@ -201,7 +201,7 @@ export default function Home() {
         return
       }
       let updated = model.board.letters[r][c] + model.board.letters[r][c + 1]
-      if(updated.length > 6){
+      if(updated.length > 7){
         return
       }
       setHistory([...history, JSON.parse(JSON.stringify(model))]);
@@ -224,8 +224,10 @@ export default function Home() {
       config = config1
     }else if(configNum === 2){
       config = config2
-    }else{
+    }else if(configNum === 3){
       config = config3
+    }else{
+      config = config4
     }
     let score = 0
     for(let r = 0; r < 5; r++){
@@ -304,13 +306,14 @@ export default function Home() {
             <option value="0">Colors</option>
             <option value="1">Animals</option>
             <option value="2">Fruits</option>
+            <option value="3">Football Teams</option>
           </select>
           <button className="menu-button" onClick={() => handleBack()}>Undo</button>
           <button className="menu-button" onClick={() => handleReset()}>Reset</button>
           <button className="menu-button" onClick={() => handleCheckSolution()}>Check Solution</button>
         </div>
         <div className="horizontal-container">
-          <label className="menu-button">{"Category: " + (model.chosen === 0 ? "Colors" : model.chosen === 1 ? "Animals" : "Fruits")}</label>
+          <label className="menu-button">{"Category: " + (model.chosen === 0 ? "Colors" : model.chosen === 1 ? "Animals" : model.chosen === 2 ? "Fruits" : "Football Teams")}</label>
           <label className="menu-button">{"Score: " + model.score}</label>
           <label className="menu-button">{"Number of Moves: " + model.moves}</label>
         </div>

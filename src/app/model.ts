@@ -1,5 +1,5 @@
 
-import { config1, config2, config3 } from './puzzle'
+import { config1, config2, config3, config4 } from './puzzle'
 
 export class Coordinate {
     readonly row : number
@@ -42,7 +42,7 @@ export class Board {
 export class Model {
     words : string[]
     board : Board
-    readonly configs = [ config1, config2, config3]
+    readonly configs = [ config1, config2, config3, config4]
     chosen : number
     moves : number
     score: number
